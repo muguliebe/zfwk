@@ -1,9 +1,13 @@
 package zfwk.proto
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 import org.springframework.boot.runApplication
 
-@SpringBootApplication(scanBasePackages = ["zfwk"])
+@SpringBootApplication(
+    scanBasePackages = ["zfwk"],
+    exclude = [DataSourceAutoConfiguration::class]
+)
 class ZFwkApp
 
 fun main(args: Array<String>) {
