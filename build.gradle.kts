@@ -7,8 +7,8 @@ plugins {
     kotlin("plugin.spring") version "1.4.21"
 }
 
-group = "com.egstep"
-version = "0.0.1"
+group = "zfwk"
+version = "1.0.0"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
@@ -16,11 +16,19 @@ repositories {
 }
 
 dependencies {
+
+    // spring
     implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("org.springframework.boot:spring-boot-starter-jdbc")
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
+
+    // kotlin
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    developmentOnly("org.springframework.boot:spring-boot-devtools")
+    implementation("org.jetbrains.kotlin:kotlin-noarg")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
+    // test
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 

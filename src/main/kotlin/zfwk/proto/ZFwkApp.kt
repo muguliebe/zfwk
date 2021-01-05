@@ -3,9 +3,9 @@ package zfwk.proto
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
-@SpringBootApplication(scanBasePackages = "zfwk")
-class ZFwkApplication
+@SpringBootApplication(scanBasePackages = ["zfwk"])
+class ZFwkApp
 
 fun main(args: Array<String>) {
-    runApplication<ZFwkApplication>(*args)
+    runApplication<ZFwkApp>(*args)
 }

@@ -1,4 +1,4 @@
-package zfwk.proto
+package zfwk.proto.controller
 
 class ProtoController {
 }
