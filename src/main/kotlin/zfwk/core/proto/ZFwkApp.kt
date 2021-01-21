@@ -1,4 +1,4 @@
-package zfwk.proto
+package zfwk.core.proto
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration

@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "zfwk"
-version = "0.1.3"
+version = "0.1.4"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
@@ -32,6 +32,9 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlin:kotlin-noarg")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
+    // zfwk
+    implementation("zfwk:zutils:0.1.2")
 
     // test
     testImplementation("org.springframework.boot:spring-boot-starter-test")
