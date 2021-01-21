@@ -1,4 +1,6 @@
 package zfwk.core.proto.controller
 
-class ProtoController {
+import zfwk.core.base.BaseController
+
+class ProtoController: BaseController() {
 }
