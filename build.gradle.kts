@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "zfwk"
-version = "0.1.1"
+version = "0.1.3"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
@@ -79,17 +79,23 @@ val pomLicenseDist = "repo"
 val pomDeveloperId = "zany"
 val pomDeveloperName = "zany"
 
-// for jar produce
-configurations {
-    listOf(apiElements, runtimeElements).forEach {
-        // Method #1
-        val jar by tasks
-        it.get().outgoing.artifacts.removeIf { it.buildDependencies.getDependencies(null).contains(jar) }
-
-        // Method #2
-        it.get().outgoing.artifact(tasks.bootJar)
-    }
+tasks.getByName<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar") {
+    enabled = false
 }
+
+tasks.getByName<Jar>("jar") {
+    enabled = true
+}
+
+// for jar produce
+//configurations {
+//    listOf(apiElements, runtimeElements).forEach {
+//        val jar by tasks
+//        it.get().outgoing.artifacts.removeIf { it.buildDependencies.getDependencies(null).contains(jar) }
+
+//        it.get().outgoing.artifact(tasks.bootJar)
+//    }
+//}
 
 publishing {
     publications {
