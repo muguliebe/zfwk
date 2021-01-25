@@ -10,8 +10,8 @@ plugins {
     `maven-publish`
 }
 
-group = "zfwk"
-version = "0.1.5"
+group = "com.egstep"
+version = "0.1.1"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
@@ -34,7 +34,7 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 
     // zfwk
-    implementation("zfwk:zutils:0.1.2")
+    implementation("com.egstep:zutils:0.1.1")
 
     // test
     testImplementation("org.springframework.boot:spring-boot-starter-test")
@@ -102,7 +102,7 @@ tasks.getByName<Jar>("jar") {
 
 publishing {
     publications {
-        create<MavenPublication>("zfwk") {
+        create<MavenPublication>("zfwk-core") {
             groupId = artifactGroup
             artifactId = artifactName
             version = artifactVersion
@@ -139,11 +139,11 @@ bintray {
     key = project.findProperty("bintrayKey").toString()
     publish = true
 
-    setPublications("zfwk")
+    setPublications("zfwk-core")
 
     pkg.apply {
         println("packaging..")
-        repo = "zfwk"
+        repo = artifactGroup
         name = artifactName
         userOrg = "zany"
         githubRepo = githubRepo

@@ -1,1 +1,1 @@
-rootProject.name = "zfwk"
+rootProject.name = "zfwk-core"
